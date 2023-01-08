@@ -1,0 +1,92 @@
+﻿@model Assessment.Models.SignUp
+
+
+
+<h2 class="text-primary"> &nbsp;&nbsp;&nbsp;Create Shape Account</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6 ">
+               
+                <label> First Name </label>
+
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="form-group col-md-6 ">
+               
+                <label>Last Name </label>
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+               
+                <label>Work Email Address</label>
+                @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+
+               
+                <label>Password</label>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+              
+                <label>Confirm Password</label>
+                @Html.EditorFor(model => model.Confirmpassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Confirmpassword, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+
+        <div class="form-group text-center">
+            <div class="col-md-offset-1 col-md-6">
+                <input type="submit" value="Sign Up" class="btn-lg btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*<script>
+            swal("Here's a title", "Here's some text", "success", {
+              button: "I am new button",
+
+            });
+        </script>*@
+}
