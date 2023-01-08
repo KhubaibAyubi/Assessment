@@ -1,0 +1,7 @@
+If You Will Face any Version error 
+try 
+
+Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+
+
+In package manager console 
